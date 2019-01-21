@@ -40,11 +40,13 @@ namespace _01_Form
             userWeight = float.Parse(str);
 
             //Вывод
-            Console.WriteLine("Вывод информации используя склеивание:");
+            Console.WriteLine("\nВывод информации используя склеивание:");
             Console.WriteLine(userName + " " + userSurname + ". Возраст: " + userAge + ". Рост: " + userHeight + ". Вес: " + userWeight);
             Console.WriteLine("Вывод информации используя форматированный вывод:");
             Console.WriteLine("{0} {1}. Возраст: {2}. Рост: {3:F}. Вес: {4:F}", userName, userSurname, userAge, userHeight, userWeight);
-            //Console.WriteLine("Вывод информации используя вывод со знаком $:");
+            Console.WriteLine("Вывод информации используя вывод со знаком $:");
+            Console.WriteLine($"{userName} {userSurname}. Возраст: {userAge}. Рост: {userHeight:F}. Вес: {userWeight:F}");
+
 
             Console.ReadLine();
         }
