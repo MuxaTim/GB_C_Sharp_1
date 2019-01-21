@@ -20,8 +20,8 @@ namespace _01_Form
             string userName; //имя
             string userSurname; //фамилия
             byte userAge; //возраст
-            byte userHeight; //рост
-            byte userWeight; //вес
+            float userHeight; //рост
+            float userWeight; //вес
 
             //Ввод данных
             Console.WriteLine("Ввод данных пользователя:");
@@ -34,14 +34,17 @@ namespace _01_Form
             userAge = byte.Parse(str);
             Console.Write("Рост: ");
             str = Console.ReadLine();
-            userHeight = byte.Parse(str);
+            userHeight = float.Parse(str);
             Console.Write("Вес: ");
             str = Console.ReadLine();
-            userWeight = byte.Parse(str);
+            userWeight = float.Parse(str);
 
             //Вывод
+            Console.WriteLine("Вывод информации используя склеивание:");
             Console.WriteLine(userName + " " + userSurname + ". Возраст: " + userAge + ". Рост: " + userHeight + ". Вес: " + userWeight);
-
+            Console.WriteLine("Вывод информации используя форматированный вывод:");
+            Console.WriteLine("{0} {1}. Возраст: {2}. Рост: {3:F}. Вес: {4:F}", userName, userSurname, userAge, userHeight, userWeight);
+            //Console.WriteLine("Вывод информации используя вывод со знаком $:");
 
             Console.ReadLine();
         }
