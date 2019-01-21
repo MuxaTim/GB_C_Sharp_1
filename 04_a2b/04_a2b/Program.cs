@@ -17,19 +17,25 @@ namespace _04_a2b
             Console.WriteLine("===================================================");
 
             //переменные
-            string a;
-            string b;
-            string c;
-            Console.Write("Введите значение строковой переменной \"a\":");
-            a = Console.ReadLine();
-            Console.Write("Введите значение строковой переменной \"b\":");
-            b = Console.ReadLine();
+            float a;
+            float b;
+            float c;
+            Console.Write("Введите числовое значение переменной \"a\":");
+            string str = Console.ReadLine();
+            a = float.Parse(str);
+            Console.Write("Введите числовое значение переменной \"b\":");
+            str = Console.ReadLine();
+            b = float.Parse(str);
 
             Console.WriteLine($"\nЗначения переменных ДО обмена:\na = {a}\nb = {b}");
             c = a;
             a = b;
             b = c;
             Console.WriteLine($"Значения переменных ПОСЛЕ обмена:\na = {a}\nb = {b}");
+            a = a + b;
+            b = a - b;
+            a = a - b;
+            Console.WriteLine($"Меняем значения переменных обратно,\nно уже НЕ используем третью переменную:\na = {a}\nb = {b}");
 
 
             Console.ReadLine();
