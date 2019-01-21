@@ -33,6 +33,37 @@ namespace _02_BMI_Calculator
             bmi = userWeight / (userHeight * userHeight);
             Console.WriteLine($"Индекс массы вашего тела равен: {bmi:F}");
 
+            //Текстовое пояснение к индексу массы тела
+            Console.Write("Это означает, что у вас ");
+            if ( bmi <= 16)
+            {
+                Console.WriteLine("выраженный дефицит массы тела.");
+            }
+            else if ( bmi <= 18.5 )
+            {
+                Console.WriteLine("недостаточная (дефицит) масса тела.");
+            }
+            else if ( bmi <= 24.99 )
+            {
+                Console.WriteLine("нормальная масса тела.");
+            }
+            else if ( bmi <= 30)
+            {
+                Console.WriteLine("избыточная масса тела (предожирение).");
+            }
+            else if (bmi <= 35)
+            {
+                Console.WriteLine("ожирение.");
+            }
+            else if (bmi <= 40)
+            {
+                Console.WriteLine("ожирение резкое.");
+            }
+            else if (bmi > 40)
+            {
+                Console.WriteLine("очень резкое ожирение.");
+            }
+
             Console.ReadLine();
 
         }
