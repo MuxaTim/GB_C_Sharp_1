@@ -91,5 +91,43 @@ namespace MyLibrary
             Console.WriteLine("║");
         }
 
+
+        //метод InputInt для запроса у юзера числа типа Int
+        static public int InputInt(string message)
+        {
+            int a;
+            Console.Write(message);
+            string str = Console.ReadLine();
+            bool isInt = int.TryParse(str, out a); //проверем, введено число или нет
+            if (isInt) {
+                a = int.Parse(str); //если всё ок, то парсим строку в переменную а
+            }
+            else
+            {
+                //если нет, то предупреждаем пользователя и используем рекурсию для повторного запроса
+                Console.WriteLine("Вы ввели не целое число, повторите ввод!");
+                a = InputInt(message);
+            }
+            return a;
+        }
+
+        //метод InputFloat для запроса у юзера числа типа Float
+        static public float InputFloat(string message)
+        {
+            float a;
+            Console.Write(message);
+            string str = Console.ReadLine();
+            bool isFloat = float.TryParse(str, out a); //проверем, введено число или нет
+            if (isFloat) {
+                a = float.Parse(str);
+            }
+            else {
+                //если нет, то предупреждаем пользователя и используем рекурсию для повторного запроса
+                Console.WriteLine("Вы ввели не число, повторите ввод!");
+                a = InputFloat(message);
+            }
+            
+            return a;
+        }
     }
 }
