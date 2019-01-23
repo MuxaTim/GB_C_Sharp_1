@@ -19,23 +19,35 @@ namespace _04_Login
             string loginOk = "root";
             string passwordOk = "GeekBrains";
 
-            
+            bool loginGood;
+            int count = 3; // кол-во попыток ввода пароля
+            do
+            {
+                loginGood = SignIn(loginOk, passwordOk);
 
-            bool loginGood = SignIn(loginOk, passwordOk);
+                if (loginGood)
+                {
+                    Console.Write($"Пароль верный. Вы вошли в систему под пользователем {loginOk}");
+                }
+                else
+                {
+                    count--;
+                    Console.Write($"Логин или пароль не верный.\nОсталось попыток {count}\n");
+                }
+                
+            } while (loginGood ^ count > 0);
 
             if (loginGood)
             {
-                Console.Write($"Пароль верный. Вы вошли в систему под пользователем {loginOk}");
-            }
-            else
-            {
-                Console.Write($"Логин или пароль не верный. Попробуйте еще раз.");
+                //код выполняется, если логин и пароль совпали
 
+                MyClass.DrawCat(); //нарисуем кота
             }
 
             Console.ReadLine();
         }
 
+        //Метод проверки логина и пароля
         static bool SignIn (string loginOk, string passwordOk)
         {
             Console.Write("Введите логин: ");
@@ -46,5 +58,6 @@ namespace _04_Login
             if (loginTry == loginOk && passwordTry == passwordOk) return true;
             else return false;
         }
+
     }
 }

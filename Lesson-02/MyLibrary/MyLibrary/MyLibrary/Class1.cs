@@ -132,5 +132,31 @@ namespace MyLibrary
 
             return a;
         }
+
+        //метод DrawCat рисует кота в консоли
+        static public void DrawCat()
+        {
+            Console.WriteLine("\n                   .                ,.");
+            Console.WriteLine("                  T.\"-._..-- -.._,-\"/|");
+            Console.WriteLine("                  l|\" -._.v._(\"      |");
+            Console.WriteLine("                  [l /.'_ \\; _~\"-.`-t");
+            Console.WriteLine("                  Y \" _(o} _{o)._ ^.|");
+            Console.WriteLine("                  j  T  ,-<v>-.  T  ]");
+            Console.WriteLine("                  \\  l ( /-^-\\ ) !  !");
+            Console.WriteLine("                   \\. \\.  \"~\"  ./  /c-..,__");
+            Console.WriteLine("                     ^r- .._ .- .-\"  `- .  ~\"--.");
+            Console.WriteLine("                      > \\.                      \\ ");
+            Console.WriteLine("                      ]   ^.                     \\ ");
+            Console.WriteLine("                      3  .  \">            .       Y  ");
+            Console.WriteLine("         ,.__.--._   _j   \\ ~   .         ;       |");
+            Console.WriteLine("        (    ~\"-._~\"^._\\   ^.    ^._      I     . l");
+            Console.WriteLine("         \"-._ ___ ~\"-,_7    .Z-._   7\"   Y      ;  \\        _");
+            Console.WriteLine("            /\"   \"~-(r r  _/_--._~-/    /      /,.--^-._   / Y");
+            Console.WriteLine("            \"-._    '\"~~~>-._~]>--^---./____,.^~        ^.^  !");
+            Console.WriteLine("                ~--._    '   Y---.                        \\./");
+            Console.WriteLine("                     ~~--._  l_   )                        \\ ");
+            Console.WriteLine("                           ~-._~~~---._,____..---           \\ ");
+
+        }
     }
 }
