@@ -15,9 +15,25 @@ namespace _06_GoodNumbers
             string homework = "Домашнее задание: 6. *Написать программу подсчета количества «Хороших» чисел в диапазоне от 1 до 1 000 000 000. Хорошим называется число, которое делится на сумму своих цифр. Реализовать подсчет времени выполнения программы, используя структуру DateTime.";
             MyClass.TextAbout(lesson, homework); //воспользуюсь своей библиотекой для создания шапки
 
-            int number = MyClass.InputInt("");
-            int a = NumbersSum(number);
-            Console.WriteLine(a);
+            for (int maxNumber = 10; maxNumber <= 1000000000; maxNumber = maxNumber * 10) {
+                Console.WriteLine("Считаем до {0:# ### ### ###}...", maxNumber);
+
+
+                int goodNumberCount = 0; //счетчик хороших чисел
+
+                DateTime start = DateTime.Now; //запуск таймера
+                for (int i = 1; i <= maxNumber; i++)
+                {
+                    if (i % NumbersSum(i) == 0) goodNumberCount++;
+                }
+                DateTime finish = DateTime.Now; //остановка таймера
+
+                
+                Console.WriteLine("В диапазоне от 1 до {0:# ### ### ###} находится {1:# ### ### ###} хороших чисел.", maxNumber, goodNumberCount);
+                Console.Write("Времени на просчет этого диапазона затрачено: ");
+                Console.WriteLine(finish - start);
+                
+            }
             Console.ReadLine();
         }
 
@@ -28,7 +44,6 @@ namespace _06_GoodNumbers
             while (number != 0)
             {
                 count = count + number % 10;
-
                 number = number / 10;
             }
             return count;
