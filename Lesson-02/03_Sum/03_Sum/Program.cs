@@ -16,7 +16,7 @@ namespace _03_Sum
             MyClass.TextAbout(lesson, homework); //воспользуюсь своей библиотекой для создания шапки
 
             int sum = 0; //здесь будем хранить сумму
-            int a = MyClass.InputInt("Введите число и нажмите \"Enter\". Введите \"0\", чтобы закончить ввод:");
+            int a = MyClass.InputInt("Введите число и нажмите \"Enter\".\nВведите \"0\", чтобы закончить ввод:");
 
             while (a != 0)
             {
