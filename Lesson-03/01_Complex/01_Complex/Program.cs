@@ -20,7 +20,7 @@ namespace _01_Complex
             return y;
         }
         //  Пример произведения двух комплексных чисел
-        public Complex Multi(Complex x)
+        public Complex Multiplication(Complex x)
         {
             Complex y;
             y.im = re * x.im + im * x.re;
@@ -40,8 +40,8 @@ namespace _01_Complex
         public Complex Division(Complex x)
         {
             Complex c = Conjugate(x); //получаем "c" - сопряженное к "x" (делителю) число
-            Complex y1 = this.Multi(c); //числитель
-            Complex y2 = x.Multi(c); //знаменатель
+            Complex y1 = this.Multiplication(c); //числитель
+            Complex y2 = x.Multiplication(c); //знаменатель
             y1.re = y1.re / (y2.re + y2.im);
             y1.im = y1.im / (y2.re + y2.im);
             return y1;
@@ -104,7 +104,7 @@ namespace _01_Complex
             
             Complex result = complex1.Plus(complex2);
             Console.WriteLine("\n({0}) + ({1}) = {2}", complex1.ToString(), complex2.ToString(), result.ToString());
-            result = complex1.Multi(complex2);
+            result = complex1.Multiplication(complex2);
             Console.WriteLine("\n({0}) * ({1}) = {2}", complex1.ToString(), complex2.ToString(), result.ToString());
             result = complex1.Subtraction(complex2);
             Console.WriteLine("\n({0}) - ({1}) = {2}", complex1.ToString(), complex2.ToString(), result.ToString());
