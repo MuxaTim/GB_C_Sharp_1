@@ -12,16 +12,10 @@ namespace _03_Fractions
         public int numerator;
         public int denominator;
 
+        //Приведение дроби к типу string
         public string ToString()
         {
-            if (denominator == 1)
-            {
-                return numerator + "";
-            }
-            else
-            {
                 return numerator + "/" + denominator;
-            }
             
         }
 
@@ -77,7 +71,7 @@ namespace _03_Fractions
             return this.Multiplication(c);
         }
 
-        //приведение к общему знаменателю
+        //Приведение к общему знаменателю
         public static void Common(ref Fraction a,ref Fraction b)
         {
             int aDenom = a.denominator; //сохраним в переменную значение знаменателя дроби "a"
