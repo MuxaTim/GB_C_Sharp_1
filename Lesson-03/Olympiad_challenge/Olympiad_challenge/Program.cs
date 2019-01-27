@@ -16,7 +16,7 @@ namespace Olympiad_challenge
             do
             {
                 i++;
-            } while (Math.Pow(2, i) < n);
+            } while (Math.Pow(2, i) <= n);
             return i;
         }
 
