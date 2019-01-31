@@ -246,6 +246,7 @@ namespace MyLibrary
                 return min;
             }
         }
+        
         public int CountPositiv
         {
             get
@@ -254,6 +255,13 @@ namespace MyLibrary
                 for (int i = 0; i < a.Length; i++)
                     if (a[i] > 0) count++;
                 return count;
+            }
+        }
+        public void Inverse()
+        {
+            for (int i = 0; i < a.Length; i++)
+            {
+                a[i] *= -1;
             }
         }
         public override string ToString()

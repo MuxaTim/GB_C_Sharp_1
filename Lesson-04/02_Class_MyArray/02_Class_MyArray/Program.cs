@@ -22,6 +22,10 @@ namespace _02_Class_MyArray
             Console.Write("Сумма элементов массива: ");
             Console.WriteLine(a.Sum);
 
+            a.Inverse();
+            Console.WriteLine(a);
+            Console.Write("Сумма элементов массива: ");
+            Console.WriteLine(a.Sum);
 
             Console.ReadLine();
         }
