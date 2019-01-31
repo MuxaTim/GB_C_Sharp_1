@@ -16,12 +16,14 @@ namespace _01_Array
             MyClass.TextAbout(70, lesson, homework);
 
             int[] array = new int[20];
+            Random r = new Random();
 
-            for (int i = 0; i<array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                array[i] = i;
+                array[i] = r.Next(-10000, 10000);
                 Console.WriteLine(array[i]);
             }
+               
 
             Console.ReadLine();
         }
