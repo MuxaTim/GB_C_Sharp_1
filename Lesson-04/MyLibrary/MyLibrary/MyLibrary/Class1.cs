@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -296,5 +297,21 @@ namespace MyLibrary
                 s = s + v + " ";
             return s;
         }
+    }
+
+    public class MyFile
+    {
+        //Метод Print выводит содержимое файла в консоль
+        public static void Print(string fileName)
+        {
+            StreamReader sr = new StreamReader(fileName);
+            while (!sr.EndOfStream)
+            {
+                string str = sr.ReadLine();
+                Console.WriteLine(str);
+            }
+            sr.Close();
+        }
+
     }
 }

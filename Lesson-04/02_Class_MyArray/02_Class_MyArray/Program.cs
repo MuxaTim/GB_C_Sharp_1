@@ -38,6 +38,10 @@ namespace _02_Class_MyArray
             Console.WriteLine(b);
             Console.WriteLine("Количество максимальных элементов: " + b.MaxCount);
 
+            string fileName = "file.txt";
+            Console.WriteLine("\nЧитаем данные из файла " + fileName + " используя конструктор класса MyFile:");
+            MyFile.Print(fileName);
+
             Console.ReadLine();
         }
     }
