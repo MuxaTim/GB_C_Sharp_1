@@ -236,6 +236,24 @@ namespace MyLibrary
                 return max;
             }
         }
+        public int MaxCount
+        {
+            get
+            {
+                int max = a[0];
+                int maxCount = 1;
+                for (int i = 1; i < a.Length; i++)
+                {
+                    if (a[i] > max) {
+                        max = a[i];
+                        maxCount = 1;
+                    }
+                    else if (a[i] == max) maxCount++;
+                }
+                    
+                return maxCount;
+            }
+        }
         public int Min
         {
             get

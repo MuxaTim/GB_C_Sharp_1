@@ -16,7 +16,9 @@ namespace _02_Class_MyArray
 
             // Создаём экземпляр класса MyArray, третьим праметром передаём переменную типа short
             MyArray a = new MyArray(10, 5, stepA);
+            MyArray b = new MyArray(10, 1, 4);
 
+            Console.WriteLine("Массив a:");
             Console.WriteLine(a);
 
             Console.Write("Сумма элементов массива: ");
@@ -31,6 +33,10 @@ namespace _02_Class_MyArray
             Console.WriteLine(a);
             Console.Write("Сумма элементов массива: ");
             Console.WriteLine(a.Sum);
+
+            Console.WriteLine("\nМассив b:");
+            Console.WriteLine(b);
+            Console.WriteLine("Количество максимальных элементов: " + b.MaxCount);
 
             Console.ReadLine();
         }
