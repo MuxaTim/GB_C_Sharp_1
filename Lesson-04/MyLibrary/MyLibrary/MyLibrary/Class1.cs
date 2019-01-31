@@ -198,6 +198,23 @@ namespace MyLibrary
             for (int i = 0; i < n; i++)
                 a[i] = rnd.Next(min, max);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="start"></param>
+        /// <param name="step">если переменная типа short - будет вызван конструктор, задающий элементы массива с указанным шагом</param>
+        public MyArray(int n, int start, short step)
+        {
+            a = new int[n];
+            for (int i = 0; i<a.Length; i++)
+            {
+                a[i] = start;
+                start += step;
+            }
+
+        }
         public int Max
         {
             get
