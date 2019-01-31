@@ -264,6 +264,13 @@ namespace MyLibrary
                 a[i] *= -1;
             }
         }
+        public void Multi(int c)
+        {
+            for (int i = 0; i < a.Length; i++)
+            {
+                a[i] *= c;
+            }
+        }
         public override string ToString()
         {
             string s = "";
