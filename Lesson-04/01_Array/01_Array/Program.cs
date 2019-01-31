@@ -20,7 +20,7 @@ namespace _01_Array
 
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = r.Next(-10000, 10000);
+                array[i] = r.Next(-10000, 10001);
                 Console.WriteLine(array[i]);
             }
                
