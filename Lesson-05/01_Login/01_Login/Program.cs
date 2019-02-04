@@ -13,9 +13,16 @@ namespace _01_Login
         //Метод LoginCheck проверяет корректность логина
         static bool LoginCheck(string login)
         {
+            // Проверяем длину логина
             if (login.Length >= 2 && login.Length <=10)
             {
-                return true;
+                // Проверяем, является ли первый символ логина числом
+                if (!Char.IsDigit(login[0]))
+                {
+                    return true;
+                }
+
+                else return false;
             }
             else return false;
         }
