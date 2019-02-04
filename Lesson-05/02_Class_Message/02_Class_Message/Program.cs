@@ -9,7 +9,7 @@ namespace _02_Class_Message
 {
     static class Message
     {
-        //Вывести только те слова сообщения,  которые содержат не более n букв.
+        // Вывести только те слова сообщения,  которые содержат не более n букв.
         public static string WordsByLength (int n, string str)
         {
             string str2 = String.Empty;
@@ -25,12 +25,12 @@ namespace _02_Class_Message
             return str2;
         }
 
-        //Удалить из сообщения все слова, которые заканчиваются на заданный символ.
+        // Удалить из сообщения все слова, которые заканчиваются на заданный символ.
         public static string DeleteByChar(string endChar, string str)
         {
             string str2 = String.Empty;
             char[] div = { ' ', ',', '.', '!', '?' }; // создаем массив разделителей
-            string[] parts = str.Split(div); //создаём массив слов
+            string[] parts = str.Split(div); // создаём массив слов
             foreach (var value in parts)
             {
                 if (!value.EndsWith(endChar))
@@ -39,6 +39,23 @@ namespace _02_Class_Message
                 }
             }
             return str2;
+        }
+
+        // Найти самое длинное слово сообщения
+        public static string LongestWord(string str)
+        {
+            char[] div = { ' ', ',', '.', '!', '?' }; // создаем массив разделителей
+            string[] parts = str.Split(div); // создаём массив слов
+            string longest = parts[0];
+
+            foreach (var value in parts)
+            {
+                if (value.Length > longest.Length)
+                {
+                    longest = value;
+                }
+            }
+            return longest;
         }
     }
 
@@ -60,11 +77,12 @@ namespace _02_Class_Message
             {
                 Console.WriteLine("Введите сообщение:");
                 message = Console.ReadLine();
-                Console.WriteLine("Слова, которые содержат не менее {0} букв:", n);
+                Console.WriteLine("\n\nСлова, которые содержат не менее {0} букв:", n);
                 Console.WriteLine(Message.WordsByLength(n, message));
-                Console.WriteLine();
-                Console.WriteLine("Слова, которые не заканчиваются на символ \"{0}\":", endChar);
+                Console.WriteLine("\nСлова, которые не заканчиваются на символ \"{0}\":", endChar);
                 Console.WriteLine(Message.DeleteByChar(endChar, message));
+                Console.WriteLine("\nСамое длиное слово:");
+                Console.WriteLine(Message.LongestWord(message));
 
             } while (message != "");
         }
