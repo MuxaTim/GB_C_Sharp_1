@@ -13,12 +13,26 @@ namespace _01_Login
         //Метод LoginCheck проверяет корректность логина
         static bool LoginCheck(string login)
         {
+            // Строка допустимых символов в логине 
+            // (т.к. мы не проверяем регистр, то все символы здесь в нижнем регистре)
+            string allowChars = "abcdefghijklmnopqrstuvwxyz0123456789";
+
+            char loginChar;
+
             // Проверяем длину логина
             if (login.Length >= 2 && login.Length <=10)
             {
                 // Проверяем, является ли первый символ логина числом
                 if (!Char.IsDigit(login[0]))
                 {
+                    for (int i = 0; i<login.Length; i++)
+                    {
+                        loginChar = Char.ToLower(login[i]); // Проверку символов делаем по нижнему регистру
+                        if (!allowChars.Contains(loginChar))
+                        {
+                            return false;
+                        }
+                    }
                     return true;
                 }
 
