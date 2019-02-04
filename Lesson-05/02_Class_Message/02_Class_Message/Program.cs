@@ -25,7 +25,21 @@ namespace _02_Class_Message
             return str2;
         }
 
-
+        //Удалить из сообщения все слова, которые заканчиваются на заданный символ.
+        public static string DeleteByChar(string endChar, string str)
+        {
+            string str2 = String.Empty;
+            char[] div = { ' ', ',', '.', '!', '?' }; // создаем массив разделителей
+            string[] parts = str.Split(div); //создаём массив слов
+            foreach (var value in parts)
+            {
+                if (!value.EndsWith(endChar))
+                {
+                    str2 += value + " ";
+                }
+            }
+            return str2;
+        }
     }
 
     class Program
@@ -38,12 +52,20 @@ namespace _02_Class_Message
             MyClass.TextAbout(90, lesson, homework);
 
             string message = String.Empty;
+            int n = 5; //количество букв для первого метода
+            string endChar = "о";
+
 
             do
             {
                 Console.WriteLine("Введите сообщение:");
                 message = Console.ReadLine();
-                Console.WriteLine(Message.WordsByLength(4, message));
+                Console.WriteLine("Слова, которые содержат не менее {0} букв:", n);
+                Console.WriteLine(Message.WordsByLength(n, message));
+                Console.WriteLine();
+                Console.WriteLine("Слова, которые не заканчиваются на символ \"{0}\":", endChar);
+                Console.WriteLine(Message.DeleteByChar(endChar, message));
+
             } while (message != "");
         }
     }
