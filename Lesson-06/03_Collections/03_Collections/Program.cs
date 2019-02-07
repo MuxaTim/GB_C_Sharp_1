@@ -41,6 +41,15 @@ class Program
         return String.Compare(st1.age.ToString(), st2.age.ToString());          // Сравниваем две строки
     }
 
+    static int MyDelegatCourseAge(Student st1, Student st2)          // Создаем метод для сравнения по курсу и возрасту для экземпляров
+    {
+        if (String.Compare(st1.course.ToString(), st2.course.ToString()) == 0)
+        {
+            return String.Compare(st1.age.ToString(), st2.age.ToString());
+        }          
+        else return String.Compare(st1.course.ToString(), st2.course.ToString());
+    }
+
     // Считаем количество студентов от 18 до 20 на каждом курсе используя частотный массив
     static int[] CountCourse(List<Student> list)
     {
@@ -108,7 +117,16 @@ class Program
         foreach (var v in list) Console.WriteLine("Возраст: {0}; Имя: {1} {2}", v.age, v.firstName, v.lastName);
         #endregion
 
+        #region Задание г)
+        //*отсортировать список по курсу и возрасту студента;
+        Console.WriteLine("\n\nСортируем список по курсу и возрасту студентов:");
+        list.Sort(new Comparison<Student>(MyDelegatCourseAge));
+        foreach (var v in list) Console.WriteLine("Курс: {0} Возраст: {1}; Имя: {2} {3}", v.course, v.age, v.firstName, v.lastName);
+        #endregion
+
         Console.WriteLine(DateTime.Now - dt);
         Console.ReadKey();
     }
+
+
 }
