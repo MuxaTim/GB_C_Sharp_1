@@ -36,6 +36,10 @@ class Program
         return String.Compare(st1.firstName, st2.firstName);          // Сравниваем две строки
     }
 
+    static int MyDelegatAge(Student st1, Student st2)          // Создаем метод для сравнения по возрасту для экземпляров
+    {
+        return String.Compare(st1.age.ToString(), st2.age.ToString());          // Сравниваем две строки
+    }
 
     // Считаем количество студентов от 18 до 20 на каждом курсе используя частотный массив
     static int[] CountCourse(List<Student> list)
@@ -80,19 +84,29 @@ class Program
             }
         }
         sr.Close();
-        list.Sort(new Comparison<Student>(MyDelegat));
+        //list.Sort(new Comparison<Student>(MyDelegat));
         Console.WriteLine("Всего студентов:" + list.Count);
         Console.WriteLine("Магистров:{0}", magistr);
         Console.WriteLine("Бакалавров:{0}", bakalavr);
-        foreach (var v in list) Console.WriteLine(v.firstName);
+        //foreach (var v in list) Console.WriteLine(v.firstName);
 
+        #region Задание б)
+        //Выполняем задание б) подсчитать сколько студентов в возрасте от 18 до 20 лет
+        //на каком курсе учатся (*частотный массив);
         var studentCourse = CountCourse(list);
-        Console.WriteLine("Студентов в возрасте от 18 до 20 обучается:");
+        Console.WriteLine("\n\nСтудентов в возрасте от 18 до 20 обучается:");
         for (int i = 0; i<studentCourse.Length; i++)
         {
             Console.WriteLine("На {0} курсе - {1} человек", i+1, studentCourse[i]);
         }
+        #endregion
 
+        #region Задание в)
+        //отсортировать список по возрасту студента
+        Console.WriteLine("\n\nСортируем список по возрасту студентов:");
+        list.Sort(new Comparison<Student>(MyDelegatAge));
+        foreach (var v in list) Console.WriteLine("Возраст: {0}; Имя: {1} {2}", v.age, v.firstName, v.lastName);
+        #endregion
 
         Console.WriteLine(DateTime.Now - dt);
         Console.ReadKey();
